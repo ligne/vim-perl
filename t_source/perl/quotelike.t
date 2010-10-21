@@ -25,8 +25,15 @@ qq[ brackets];
 qq{ braces };
 
 
+# spacing
 q  {there can be a space before the delimiter};
+q
+   {there can even be a newline};
 q# hash is ok as a delimiter if there is no space #;
+q
+{text};
+qq
+{text};
 
 
 # escape sequences

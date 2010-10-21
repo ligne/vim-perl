@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <title>[untitled]</title>
+  <link rel="stylesheet" type="text/css" href="../../t/vim_syntax.css" />
+ </head>
+ <body>
+
+<pre><span class="synComment"># very basic</span>
+<span class="synString">'not interpolated\n'</span>;
+<span class="synString">&quot;this is interpolated</span><span class="synSpecial">\n</span><span class="synString">&quot;</span>;
+
+<span class="synComment"># what gets interpolated</span>
+<span class="synString">&quot;interpolate </span><span class="synIdentifier">$a_scalar</span><span class="synString">&quot;</span>;
+<span class="synString">&quot;interpolate </span><span class="synIdentifier">$a_hash{</span><span class="synString">key</span><span class="synIdentifier">}</span><span class="synString">&quot;</span>;
+<span class="synString">&quot;interpolate </span><span class="synIdentifier">$a_hashref-&gt;{</span><span class="synString">key</span><span class="synIdentifier">}</span><span class="synString">&quot;</span>;
+<span class="synString">&quot;interpolate </span><span class="synIdentifier">$an_array[</span><span class="synNumber">0</span><span class="synIdentifier">]</span><span class="synString">&quot;</span>;
+<span class="synString">&quot;interpolate </span><span class="synIdentifier">$an_arrayref-&gt;[</span><span class="synNumber">0</span><span class="synIdentifier">]</span><span class="synString">&quot;</span>;
+<span class="synString">&quot;doesn't interpolate </span><span class="synIdentifier">$a_coderef</span><span class="synString">-&gt;()&quot;</span>;
+
+
+<span class="synComment"># different delimiters</span>
+<span class="synString">q@ any random character can be used, as long as both ends match @</span>;
+<span class="synString">q&lt; others need to be balanced.  eg. angle brackets&gt;</span>;
+<span class="synString">q( parens)</span>;
+<span class="synString">q[ brackets]</span>;
+<span class="synString">q{ braces }</span>;
+
+<span class="synString">qq; some random character (some choices are wiser than others) ;</span>;
+<span class="synString">qq( parens )</span>;
+<span class="synString">qq&lt; angle brackets&gt;</span>;
+<span class="synString">qq[ brackets]</span>;
+<span class="synString">qq{ braces }</span>;
+
+
+<span class="synString">q  {there can be a space before the delimiter}</span>;
+<span class="synString">q# hash is ok as a delimiter if there is no space #</span>;
+
+
+<span class="synComment"># escape sequences</span>
+<span class="synStatement">use charnames</span> <span class="synString">':full'</span>, <span class="synString">':short'</span>;
+<span class="synString">qq(</span>
+<span class="synString">    </span><span class="synSpecial">\013</span><span class="synString">    octal</span>
+<span class="synString">    </span><span class="synSpecial">\013</span><span class="synString">4   at most 2 digits long</span>
+<span class="synString">    </span><span class="synSpecial">\0</span><span class="synString">99    and only 0-7</span>
+
+<span class="synString">    </span><span class="synSpecial">\x1a</span><span class="synString">     hex character</span>
+<span class="synString">    </span><span class="synSpecial">\x80</span><span class="synString">00   maximum of 2 characters</span>
+<span class="synString">    \xxz     only hex characters</span>
+<span class="synString">    </span><span class="synSpecial">\x{8000}</span><span class="synString"> can be longer if it's in braces</span>
+<span class="synString">    \x{7zaf} only hex characters allowed here too</span>
+
+<span class="synString">    </span><span class="synSpecial">\c[</span><span class="synString">     control character</span>
+<span class="synString">)</span>;
+
+</pre>
+
+ </body>
+</html>

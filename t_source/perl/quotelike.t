@@ -50,5 +50,10 @@ qq(
     \x{7zaf} only hex characters allowed here too
 
     \c[     control character
+
+    \N{CONTOUR INTEGRAL}  named unicode char.
+    \N{greek:delta}       different format name
+    \N{U+222e}            unicode value.
+
 );
 

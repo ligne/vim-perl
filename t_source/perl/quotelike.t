@@ -39,9 +39,12 @@ qq
 # escape sequences
 use charnames ':full', ':short';
 qq(
-    \013    octal
-    \0134   at most 2 digits long
-    \099    and only 0-7
+    \013      octal
+    \0134     at most 2 digits long
+    \099      and only 0-7
+    \o{15}    can use braces
+    \o{1234}  can be more than 2 digits long
+    \o{5678}  only 0-7 are valid
 
     \x1a     hex character
     \x8000   maximum of 2 characters

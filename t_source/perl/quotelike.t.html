@@ -47,9 +47,12 @@
 <span class="synComment"># escape sequences</span>
 <span class="synStatement">use charnames</span> <span class="synString">':full'</span>, <span class="synString">':short'</span>;
 <span class="synString">qq(</span>
-<span class="synString">    </span><span class="synSpecial">\013</span><span class="synString">    octal</span>
-<span class="synString">    </span><span class="synSpecial">\013</span><span class="synString">4   at most 2 digits long</span>
-<span class="synString">    </span><span class="synSpecial">\0</span><span class="synString">99    and only 0-7</span>
+<span class="synString">    </span><span class="synSpecial">\013</span><span class="synString">      octal</span>
+<span class="synString">    </span><span class="synSpecial">\013</span><span class="synString">4     at most 2 digits long</span>
+<span class="synString">    </span><span class="synSpecial">\0</span><span class="synString">99      and only 0-7</span>
+<span class="synString">    </span><span class="synSpecial">\o{15}</span><span class="synString">    can use braces</span>
+<span class="synString">    </span><span class="synSpecial">\o{1234}</span><span class="synString">  can be more than 2 digits long</span>
+<span class="synString">    </span><span class="synSpecial">\o</span><span class="synString">{5678}  only 0-7 are valid</span>
 
 <span class="synString">    </span><span class="synSpecial">\x1a</span><span class="synString">     hex character</span>
 <span class="synString">    </span><span class="synSpecial">\x80</span><span class="synString">00   maximum of 2 characters</span>

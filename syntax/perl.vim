@@ -168,7 +168,7 @@ syn match  perlFiledescStatementNocomma "(\=\s*\u\w*\s*[^, \t]"me=e-1 transparen
 syn match  perlFiledescStatement	"\u\w*" contained
 
 " Special characters in strings and matches
-syn match  perlSpecialString	"\\\%(\o\{1,3}\|x\%({\x\+}\|\x\{1,2}\)\|c.\|N{[^\}]\+}\|[^cx]\)" contained extend
+syn match  perlSpecialString	"\\\%(o{\o\+}\|\o\{1,3}\|x\%({\x\+}\|\x\{1,2}\)\|c.\|N{[^\}]\+}\|[^cx]\)" contained extend
 syn match  perlSpecialStringU2	"\\." extend contained transparent contains=NONE
 syn match  perlSpecialStringU	"\\\\" contained
 syn match  perlSpecialMatch	"\\[1-9]" contained extend

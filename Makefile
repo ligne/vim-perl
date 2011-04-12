@@ -1,6 +1,8 @@
-FTPLUGIN=$(HOME)/.vim/ftplugin
-INDENT=$(HOME)/.vim/indent
-SYNTAX=$(HOME)/.vim/syntax
+PREFIX?=$(HOME)/.vim
+
+FTPLUGIN=$(PREFIX)/ftplugin
+INDENT=$(PREFIX)/indent
+SYNTAX=$(PREFIX)/syntax
 
 default:
 	@echo There is no default target.
@@ -35,7 +37,7 @@ symlinks: dirs
 	ln -sf $(PWD)/syntax/tt2html.vim $(SYNTAX)
 	ln -sf $(PWD)/syntax/xs.vim      $(SYNTAX)
 
-tarball: dirs
+tarball: 
 	tar czvf vim-perl.tar.gz \
 		ftplugin/perl.vim \
 		ftplugin/perl6.vim \

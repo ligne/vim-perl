@@ -178,7 +178,8 @@ syn match  perlSpecialMatch	"{\d\+\%(,\%(\d\+\)\=\)\=}" contained
 syn match  perlSpecialMatch	"\[[]-]\=[^\[\]]*[]-]\=\]" contained
 syn match  perlSpecialMatch	"[+*()?.]" contained
 syn match  perlSpecialMatch	"(?[#:=!]" contained
-syn match  perlSpecialMatch	"(?[impsx]*\%(-[imsx]\+\)\=)" contained
+syn match  perlSpecialMatch	"(?[adlupimsx]*\%(-[imsx]\+\)\=)" contained
+syn match  perlSpecialMatch	"(?^[alupimsx]*)" contained
 syn match  perlSpecialMatch	"(?\%([-+]\=\d\+\|R\))" contained
 syn match  perlSpecialMatch	"(?\%(&\|P[>=]\)\h\w*)" contained
 syn match  perlSpecialMatch	"(\*\%(\%(PRUNE\|SKIP\|THEN\)\%(:[^)]*\)\=\|\%(MARK\|\):[^)]*\|COMMIT\|F\%(AIL\)\=\|ACCEPT\))" contained
